@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml">
+
+
+    <!-- Includes: Browser Configuration -->
+    <include package=".browser"/>
+
+    <configure zcml:condition="installed Products.Zuul">
+
+        <adapter factory=".info.NeighborsLinkInfo"
+            for=".NeighborsLink.NeighborsLink"
+            provides=".interfaces.INeighborsLink"
+        />
+
+    </configure>
+
+</configure>
+
